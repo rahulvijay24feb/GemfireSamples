@@ -1,0 +1,12 @@
+---
+instances: 1
+memory: 1G
+applications:
+  - name: gemfiredemo
+    path: target/gemdemo-0.0.1-SNAPSHOT.jar
+    buildpack: https://github.com/cloudfoundry/java-buildpack  
+    services:
+      - ior-gemfire
+    env:
+      SPRING_PROFILES_ACTIVE: Development
+      SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_STREAM_SERVICES : rabbitmq
